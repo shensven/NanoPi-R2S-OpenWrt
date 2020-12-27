@@ -11,16 +11,16 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     steps:
       - name: Setup timezone
-        uses: zcong1993/setup-timezone@v1.0
+        uses: zcong1993/setup-timezone@v1.1.1
         with:
           timezone: Asia/Shanghai
 
       - name: Checkout
-        uses: actions/checkout@v2.3.2
+        uses: actions/checkout@v2.3.4
         with:
           ref: master
 
@@ -33,7 +33,7 @@ jobs:
           sudo apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php* android*
           sudo apt-get update
           sudo apt-get -y upgrade
-          sudo -E apt-get -y install subversion build-essential libncurses5-dev zlib1g-dev gawk git ccache gettext libssl-dev xsltproc zip
+          sudo -E apt-get -y install build-essential ccache ecj fastjar file g++ gawk gettext git java-propose-classpath libelf-dev libncurses5-dev libncursesw5-dev libssl-dev python python2.7-dev python3 unzip wget python3-distutils python3-setuptools rsync subversion swig time xsltproc zlib1g-dev
           sudo apt-get -y autoremove --purge
           sudo apt-get clean
 
